@@ -18,12 +18,6 @@ public class App {
         }
     }
 
-    public static void testShowToDo() {
-        data[0] = "Java - Zero to Hero";
-        data[1] = "Docker - Zero to Hero";
-        showToDo();
-    }
-
     public static void addToDo(String todo) {
         // check for full
         var isFull = true;
@@ -53,13 +47,6 @@ public class App {
         }
     }
 
-    public static void testAddToDo() {
-        for (int i = 0; i < 25; i++) {
-            addToDo("Contoh todo ke :" + i);
-        }
-        showToDo();
-    }
-
     public static boolean deleteToDo(Integer num) {
         if ((num - 1) >= data.length) {
             return false;
@@ -78,32 +65,10 @@ public class App {
         return true;
     }
 
-    public static void testDeleteToDo() {
-        addToDo("1");
-        addToDo("2");
-        addToDo("3");
-        addToDo("4");
-        addToDo("5");
-        var result = deleteToDo(20);
-        System.out.println(result);
-
-        result = deleteToDo(7);
-        System.out.println(result);
-
-        result = deleteToDo(2);
-        System.out.println(result);
-        showToDo();
-    }
-
     public static String input(String info) {
         System.out.print(info + " : ");
         String data = scanner.nextLine();
         return data;
-    }
-
-    public static void testInput() {
-        var data = input("Name");
-        System.out.println("Hi " + data);
     }
 
     public static void viewShowToDo() {
@@ -145,14 +110,6 @@ public class App {
         }
     }
 
-    public static void testViewAddTodo() {
-        addToDo("1");
-        addToDo("2");
-        addToDo("3");
-        viewAddToDo();
-        showToDo();
-    }
-
     public static void viewRemoveToDo() {
         System.out.println("DELETE TODOLIST");
 
@@ -166,14 +123,5 @@ public class App {
                 System.out.println("Aborting to delete todolist: " + number);
             }
         }
-    }
-
-    public static void testViewDeleteToDo(){
-        addToDo("1");
-        addToDo("2");
-        addToDo("3");
-        showToDo();
-        viewRemoveToDo();
-        showToDo();
     }
 }
